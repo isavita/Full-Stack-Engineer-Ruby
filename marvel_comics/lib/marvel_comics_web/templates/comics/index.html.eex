@@ -1,0 +1,23 @@
+<div class="gallery-wrapper">
+  <div class="comics-gallery">
+    <meta name="csrf" content="<%= Plug.CSRFProtection.get_csrf_token() %>">
+    <%= for comics <- all_comics(@data) do %>
+      <% liked_class = if Map.get(comics[:like], :id), do: "liked", else: "" %>
+      <div class="comics-cover-wrapper">
+        <div class="comics-cover <%= liked_class %>" data-comics-id="<%= comics[:id] %>" data-like-id="<%= Map.get(comics[:like], :id) %>">
+          <a href="#" title="<%= comics[:title] %>">
+            <%= img_tag(comics[:cover], class: "cover-image", alt: comics[:title]) %>
+            <div class="overlay"></div>
+          </a>
+          <div class="comics-unlike-frame">
+            <%= img_tag(static_path(@conn, "/images/heart_off.png")) %>
+          </div>
+          <div class="comics-like-frame">
+            <%= img_tag(static_path(@conn, "/images/heart_on.png")) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= render "pagination.html", conn: @conn, character_ids: @character_ids, page: @page %>
+</div>

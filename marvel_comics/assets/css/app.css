@@ -1,0 +1,209 @@
+/* This file is for your main application css. */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobile gallery grid size */
+.comics-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Tablet gallery grid size */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .comics-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Desktop gallery grid size */
+@media screen and (min-width: 1000px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .comics-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+/* Custom search bar header */
+.search-bar {
+  display: block;
+  width: 100%;
+  height: 130px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background: rgb(237, 34, 35);
+}
+
+.search-bar.scrolled {
+  background: rgba(237, 34, 35, 0.8);
+  transition: all 0.2s;
+}
+
+.search-bar .logo {
+  width: 168px;
+  height: 70px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  background-image: url("/images/marvel_logo.png");
+  background-size: 168px 70px;
+}
+
+.container {
+  position: relative;
+  top: 130px
+}
+/* Main search box style */
+#search-box {
+  text-align: center;
+}
+
+#search-box input {
+  height: 30px;
+  width: 210px;
+}
+
+.comics-cover-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comics-cover {
+  position: relative;
+  display: inline-block;
+}
+
+.comics-cover a {
+  display: block;
+  margin: 5px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.comics-cover img {
+  width: 100%;
+}
+
+/* The like/unlike hovers */
+.overlay {
+  display: none;
+}
+
+.comics-cover:hover .cover-image {
+  opacity: 0.3;
+}
+
+.comics-like-frame, .comics-unlike-frame {
+  width: 30px;
+  height: 27px;
+  transition: .5s ease;
+  position: absolute;
+  top: 10%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/* Inside border on hover/liked */
+.comics-cover.liked .cover-image {
+  outline: 8px solid red;
+  outline-offset: -8px;
+}
+
+.comics-cover:hover .overlay {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: 8px solid red;
+  outline-offset: -8px;
+}
+
+.comics-cover.liked:hover .cover-image {
+  outline: 0;
+}
+.comics-cover.liked:hover .overlay {
+  outline: 0;
+}
+
+.comics-cover.liked .comics-like-frame {
+  display: block;
+}
+
+.comics-cover .comics-like-frame {
+  display: none;
+}
+
+.comics-cover.liked:hover .comics-like-frame {
+  display: none;
+}
+
+.comics-cover:hover .comics-like-frame {
+  display: block;
+}
+
+.comics-cover .comics-unlike-frame {
+  display: none;
+}
+
+.comics-cover.liked:hover .comics-unlike-frame {
+  display: block;
+}
+
+/* Pagination navigation */
+.comics-pagination {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.comics-pagination:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.previous-page, .next-page {
+  display: block;
+  background-color: #e7e7e7;
+  color: red;
+  border: 1px solid gray;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 2px 10px;
+  margin: 5px;
+}
+
+.previous-page:hover, .next-page:hover {
+  background-color: red;
+  color: #e7e7e7;
+}
+
+.previous-page {
+  float: left;
+}
+
+.next-page {
+  float: right;
+}
+
+/* No results page*/
+.no-results {
+  margin: 20px;
+}
+.no-results img {
+  box-shadow: 5px 5px 10px black;
+}

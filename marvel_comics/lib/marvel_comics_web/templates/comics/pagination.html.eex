@@ -1,0 +1,11 @@
+<div class="comics-pagination">
+  <a href="<%= comics_path(@conn, :index, character_ids: @character_ids, page: change_page(@page, &Kernel.-(&1, 1))) %>">
+    <%= if @page > 1 do %>
+      <button class="previous-page" type="button">PREVIOUS PAGE</button>
+    <% end %>
+  </a>
+  <a href="<%= comics_path(@conn, :index, character_ids: @character_ids, page: change_page(@page, &Kernel.+(&1, 1))) %>">
+    <button class="next-page" type="button">NEXT PAGE</button>
+  </a>
+  </div>
+</div>
