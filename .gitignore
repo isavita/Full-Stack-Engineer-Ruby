@@ -1,0 +1,30 @@
+# App artifacts
+/marvel_comics/_build
+/marvel_comics/db
+/marvel_comics/deps
+/marvel_comics/*.ez
+/marvel_comics/.gitignore
+
+# Generated on crash by the VM
+/marvel_comics/erl_crash.dump
+
+# Generated on crash by NPM
+/marvel_comics/npm-debug.log
+
+# Static artifacts
+/marvel_comics/assets/node_modules
+
+# Since we are building assets from assets/,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/marvel_comics/priv/static/
+
+# Files matching config/*.secret.exs pattern contain sensitive
+# data and you should not commit them into version control.
+#
+# Alternatively, you may comment the line below and commit the
+# secrets files as long as you replace their contents by environment
+# variables.
+/marvel_comics/config/*.secret.exs
+
+/marvel_comics/.env

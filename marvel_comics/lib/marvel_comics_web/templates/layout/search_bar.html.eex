@@ -1,0 +1,9 @@
+<div class="search-bar">
+  <span class="logo"></span>
+  <div id="search-box">
+    <%= form_for @conn, comics_path(@conn, :search), [as: :search], fn f -> %>
+      <%= text_input f, :query, placeholder: "Search for marvel characters..." %>
+      <%= submit "Search", class: "btn btn-default" %>
+    <% end %>
+  </div>
+</div>

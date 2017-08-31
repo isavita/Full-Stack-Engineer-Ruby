@@ -7,7 +7,7 @@
 [Benefits](https://github.com/Streetbees/full-stack-engineer-ruby/wiki/Benefits)
 
 
-### To apply you shoud follow the instructions below:
+### To apply you should follow the instructions below:
 
 - Fork this repo;
 - Look at the specification below and do your thing;
@@ -18,7 +18,7 @@
 
 - Description:
     - Using the best API available on this side of the universe, https://developer.marvel.com/ , make a simple app that allows the user to scroll trough all the comics ever released from the most recent to the oldest (and please, let me see the cover picture while I do it!);
-    - Make it easy to search amongs the comics;
+    - Make it easy to search among the comics;
     - Let me upvote my favorite comics.
 
 - Functional requirements (Using the Job to be Done framework):
